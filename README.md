@@ -41,7 +41,7 @@ Gorm is a web application framework for Golang.
 5. Create a database with the name db_hiring_channel_app, and Import file [db_hiring_channel_app.sql](db_hiring_channel_app.sql) to **phpmyadmin**
 6. Open Postman desktop application or Chrome web app extension that has installed before
 7. Choose HTTP Method and enter request url.(ex. localhost:3000/engineers)
-8. You can see all the end point in (#postman-collection)
+8. You can see all the end point in [here](#postman-collection)
 
 ## Create Environment Variable
 
