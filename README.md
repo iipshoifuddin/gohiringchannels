@@ -16,8 +16,8 @@
 
 ## Built With
 
-[![Express.js](https://img.shields.io/badge/Express.js-4.x-orange.svg?style=rounded-square)](https://expressjs.com/en/starter/installing.html)
-[![Node.js](https://img.shields.io/badge/Node.js-v.13.3.0-green.svg?style=rounded-square)](https://nodejs.org/)
+[![Redis](https://img.shields.io/badge/Redis-v%206.15.9-%23D6062)](https://redis.io/)
+[![golang](https://img.shields.io/badge/go-v%201.16-skyblue)](https://golang.org/)
 
 ## Introduction
 
@@ -26,9 +26,11 @@ Gorm is a web application framework for Golang.
 
 ## Requirements
 
-1. npm
+1. <a href="https://www.npmjs.com/">go</a>
 2. <a href="https://www.getpostman.com/">Postman</a>
 3. Web Server (ex. localhost)
+4. MySql
+5. [Redis](https://redis.io/)
 
 ## Usage for development
 
