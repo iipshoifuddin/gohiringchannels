@@ -62,9 +62,9 @@ JWT_SECRET= YOUR-SECRET-KEY
 
 ## Contact
 
-If you want to contact me you can reach me at <nihsan727@gmail.com>.
+If you want to contact me you can reach me at <shoifuddin.arkademy@gmail.com>.
 
-Copyright © 2020 by Nur Ihsan
+Copyright © 2021 by Iip Shoifuddin
 
 ## Contributors
 
