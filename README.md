@@ -1,7 +1,7 @@
 <h1 align="center">Simple RESTful API Hiring Channel App</h1>
 <p align="center">
-  <img height="150" src="https://blog.golang.org/go-brand/Go-Logo/PNG/Go-Logo_Aqua.png"/>
-  <img height ="150" src="https://download.logo.wine/logo/Redis/Redis-Logo.wine.png"/>
+  <img height="200" src="https://blog.golang.org/go-brand/Go-Logo/PNG/Go-Logo_Aqua.png"/>
+  <img height ="200" src="https://download.logo.wine/logo/Redis/Redis-Logo.wine.png"/>
 </p>
 
 ## Table of Contents
