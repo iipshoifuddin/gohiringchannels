@@ -1,6 +1,6 @@
 <h1 align="center">Simple RESTful API Hiring Channel App</h1>
 <p align="center">
-  <img width="250" src="./public/node.png"/>
+  <img width="250" src="https://blog.golang.org/go-brand/Go-Logo/PNG/Go-Logo_Aqua.png"/>
   <img width="250" src="./public/express.png"/>
 </p>
 
