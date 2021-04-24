@@ -36,12 +36,13 @@ Gorm is a web application framework for Golang.
 
 1. Open app's directory in CMD or Terminal
 2. Type `go install`
-3. Make new file a called **.env**, set up first [here](#create-environment-variable)
-4. Turn on Web Server and MySQL can using Third-party tool like xampp, etc.
-5. Create a database with the name db_hiring_channel_app, and Import file [db_hiring_channel_app.sql](db_hiring_channel_app.sql) to **phpmyadmin**
-6. Open Postman desktop application or Chrome web app extension that has installed before
-7. Choose HTTP Method and enter request url.(ex. localhost:3000/engineers)
-8. You can see all the end point in [here](#postman-collection)
+3. Setting $GOPATH`
+4. Make new file a called **.env**, set up first [here](#create-environment-variable)
+5. Turn on Web Server and MySQL can using Third-party tool like xampp, etc.
+6. Create a database with the name db_hiring_channel_app, and Import file [db_hiring_channel_app.sql](db_hiring_channel_app.sql) to **phpmyadmin**
+7. Open Postman desktop application or Chrome web app extension that has installed before
+8. Choose HTTP Method and enter request url.(ex. localhost:3000/engineers)
+9. You can see all the end point in [here](#postman-collection)
 
 ## Create Environment Variable
 
