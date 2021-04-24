@@ -10,7 +10,7 @@ type Engineer struct {
 	ID          uint      `json:"id" gorm:"primary_key"`
 	UUID        string    `json:"uuid"`
 	Name        string    `json:"name"`
-	Descrition  string    `json:"description"`
+	Description string    `json:"description"`
 	Skill       string    `json:"skill"`
 	Address     string    `json:"address"`
 	DateOfBirth string    `json:"dateofbirth"`
