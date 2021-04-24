@@ -72,8 +72,8 @@ Copyright © 2020 by Nur Ihsan
   <table>
     <tr>
       <td align="center">
-        <a href="https://github.com/ihsan2">
-          <img width="100" src="./public/ihsan.jpg" alt="Nur Ihsan"><br/>
+        <a href="https://github.com/iipshoifuddin">
+          <img width="100" src="https://github.githubassets.com/images/modules/logos_page/Octocat.png" alt="Iip Shoifuddin"><br/>
           <sub><b>Nur Ihsan</b></sub>
         </a>
       </td>
