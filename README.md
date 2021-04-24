@@ -16,7 +16,7 @@
 
 ## Built With
 
-[![Redis](https://img.shields.io/badge/Redis-v%206.15.9-%23D6062)](https://redis.io/)
+[![Redis](https://img.shields.io/badge/Redis-v%206.15.9-%23D60620)](https://redis.io/)
 [![golang](https://img.shields.io/badge/go-v%201.16-skyblue)](https://golang.org/)
 
 ## Introduction
