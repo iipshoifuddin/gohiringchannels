@@ -26,7 +26,7 @@ Gorm is a web application framework for Golang.
 
 ## Requirements
 
-1. <a href="https://www.npmjs.com/">go</a>
+1. <a href="https://golang.org/">go</a>
 2. <a href="https://www.getpostman.com/">Postman</a>
 3. Web Server (ex. localhost)
 4. MySql
@@ -46,21 +46,35 @@ Gorm is a web application framework for Golang.
 ## Create Environment Variable
 
 ```
-$ cp .env.example .env
+$ cp example.env .env
 $ nano .env
 ```
 
 ```
-# Set port
-PORT= YOUR-PORT
-# Set database connection information
-DB_HOST='YOUR DB HOST'
-DB_USER='YOUR DB USER'
-DB_PASS='YOUR DB PASSWORD'
-DB_NAME='YOUR DB NAME'
-# Set JWT Secret
-JWT_SECRET= YOUR-SECRET-KEY
+#server Run
+PORT_RUNNING    = "YOUR SERVER PORT"
+
+#Database CONFIG
+DB_HOST         = "DATABASE HOST"
+DB_PORT         = "DATABASE PORT"
+DB_USER         = "DATABASE USER"
+DB_PASSWORD     = "DATABASE PASSWORD"
+DB_DATABASE     = "DATABASE NAME"
+
+#Redis CONFIG
+REDIS_ADDRESS     = "REDIS ADDRESS:REDIS PORT"
+REDIS_PASSWORD    = "REDIS PASSWORD"
+
+#Path Image Engineers
+PATH_STATIC_ENG     = "./public/images/engineers"
+PATH_UPLOAD_ENG     = "public/images/engineers/"
+PUBLIC_SHARE_IMG    = "/public/engineers"
+PUBLIC_UPLOAD_DB    = "public/engineers/"
 ```
+
+## Postman Collection
+
+<a href="https://golang.org/">Postman Collection</a>
 
 ## Contact
 
