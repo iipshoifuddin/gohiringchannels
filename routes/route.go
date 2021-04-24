@@ -16,7 +16,7 @@ func SetupRoutes(db *gorm.DB) *gin.Engine {
 	r.Use(func(c *gin.Context) {
 		c.Set("db", db)
 	})
-	r.Static("/public/engineers", os.Getenv("PATH_STATIC_ENG"))
+	r.Static(os.Getenv("PUBLIC_SHARE_IMG"), os.Getenv("PATH_STATIC_ENG"))
 
 	//Use RegisterValidation in the Controllers struct entity
 	// and use the key are the registered word
@@ -35,11 +35,13 @@ func SetupRoutes(db *gorm.DB) *gin.Engine {
 	r.POST("/refresh", controllers.Refresh)
 	r.POST("/logout", controllers.Logout)
 	r.POST("/api/v1/engineers/register", controllers.CreateEngineer)
+
 	//Engineers Endpoint
-	r.GET("/api/v1/engineers/getAll", controllers.FineEngineers)
-	r.GET("/api/v1/engineers/find/:id", controllers.FineEngineer)
-	r.POST("/api/v1/engineers/update/:id", controllers.UpdateEngginer)
-	r.POST("/api/v1/engineers/uploadimage/:id", controllers.UploadShowcaseEngginer)
+	r.GET("/api/v1/engineers/getAll", controllers.TokenAuthMiddleware(), controllers.FineEngineers)
+	r.GET("/api/v1/engineers/find/:id", controllers.TokenAuthMiddleware(), controllers.FineEngineer)
+	r.POST("/api/v1/engineers/update/:id", controllers.TokenAuthMiddleware(), controllers.UpdateEngginer)
+	r.POST("/api/v1/engineers/uploadimage/:id", controllers.TokenAuthMiddleware(), controllers.UploadShowcaseEngginer)
+	r.DELETE("/api/v1/engineers/delete/:id", controllers.TokenAuthMiddleware(), controllers.DeleteAccount)
 
 	//Core Endpoint
 	return r

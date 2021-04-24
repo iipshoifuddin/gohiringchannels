@@ -126,7 +126,6 @@ func FineEngineer(c *gin.Context) {
 	db := c.MustGet("db").(*gorm.DB)
 
 	db.Select(listViewEngineers).Where("id = ?", c.Param("id")).Find(&enginners)
-
 	c.JSON(http.StatusOK, gin.H{"data": enginners})
 }
 
@@ -179,16 +178,19 @@ func UpdateEngginer(c *gin.Context) {
 }
 
 func UploadShowcaseEngginer(c *gin.Context) {
-
+	const SR_File_Max_Bytes = 1 * 1024 * 1024
 	imgeName := uuid.NewV4().String()
 
 	file, header, err := c.Request.FormFile("file")
-
 	if err != nil {
 		c.String(http.StatusBadRequest, fmt.Sprintf("err: %s", err.Error()))
 		return
 	}
-	fileheadername := header.Filename
+
+	if header.Size > SR_File_Max_Bytes {
+		c.JSON(http.StatusBadRequest, gin.H{"error": " File size to big max 1024 kb !"})
+		return
+	}
 
 	// Create a buffer to store the header of the file in
 	fileHeader := make([]byte, 512)
@@ -206,19 +208,43 @@ func UploadShowcaseEngginer(c *gin.Context) {
 	}
 
 	fileType := http.DetectContentType(fileHeader)
-	// fmt.Println("file size :" + file.(int64).Size())
 	if fileType == "image/jpeg" || fileType == "image/png" || fileType == "image/jpg" {
-		fmt.Println("Image :", fileheadername)
 		// Set Folder untuk menyimpan filenya
-		path := os.Getenv("PATH_UPLOAD_ENG") + imgeName + header.Filename
+		nameoffile := imgeName + header.Filename
+		path := os.Getenv("PATH_UPLOAD_ENG") + nameoffile
 		if err := c.SaveUploadedFile(header, path); err != nil {
 			c.String(http.StatusBadRequest, fmt.Sprintf("err: %s", err.Error()))
 			return
 		}
+		var enginners models.Engineer
+		engineerUpdate := models.Engineer{
+			Showcase: os.Getenv("PUBLIC_UPLOAD_DB") + nameoffile,
+		}
+		db := c.MustGet("db").(*gorm.DB)
+		if result := db.Where("id = ?", c.Param("id")).First(&enginners); result.Error != nil {
+			c.JSON(http.StatusBadRequest, gin.H{"error": "Not Found in database !"})
+		} else {
+			db.Model(&enginners).Updates(engineerUpdate)
+			c.JSON(http.StatusOK, gin.H{"data": "File succsesfully Uploaded !"})
 
+		}
 		// Response
-		c.String(http.StatusOK, fmt.Sprintf("File : %s, nama : %s", header.Filename, header.Filename))
+		// c.JSON(http.StatusOK, gin.H{"data": fmt.Sprintf("File : %s successfully Uploaded !", header.Filename)})
 	} else {
 		c.JSON(http.StatusOK, gin.H{"data": "file type is error !"})
 	}
+}
+
+func DeleteAccount(c *gin.Context) {
+	// Get model if exist
+	db := c.MustGet("db").(*gorm.DB)
+	var engineer models.Engineer
+	if err := db.Where("id = ?", c.Param("id")).First(&engineer).Error; err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Data tidak ditemukan!!"})
+		return
+	}
+
+	db.Delete(&engineer)
+
+	c.JSON(http.StatusOK, gin.H{"data": "Account Has been deleted !"})
 }
