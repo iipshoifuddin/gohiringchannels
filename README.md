@@ -11,7 +11,6 @@
 - [Introduction](#introduction)
 - [Requirements](#requirements)
 - [Usage](#usage-for-development)
-- [Create Environment Variable](#create-environment-variable)
 - [Contact](#contact)
 - [Contributors](#contributors)
 
@@ -19,6 +18,8 @@
 
 [![Redis](https://img.shields.io/badge/Redis-v%206.15.9-%23D60620)](https://redis.io/)
 [![golang](https://img.shields.io/badge/go-v%201.16-skyblue)](https://golang.org/)
+[![docker](https://img.shields.io/badge/docker-20.10.5-%230db7ed)](https://www.docker.com/)
+
 
 ## Introduction
 
@@ -27,52 +28,21 @@ Gorm is a web application framework for Golang.
 
 ## Requirements
 
-1. <a href="https://golang.org/">go</a>
+1. <a href="https://docs.docker.com/engine/install/">Docker</a>
 2. <a href="https://www.getpostman.com/">Postman</a>
-3. Web Server (ex. localhost)
-4. MySql
-5. [Redis](https://redis.io/)
 
 ## Usage for development
 
-1. Open app's directory in CMD or Terminal
-2. Type `go install`
-3. Setting $GOPATH`
-4. Make new file a called **.env**, set up first [here](#create-environment-variable)
-5. Turn on Web Server and MySQL can using Third-party tool like xampp, etc.
-6. Create a database with the name db_hiring_channel_app, and Import file [db_hiring_channel_app.sql](db_hiring_channel_app.sql) to **phpmyadmin**
-7. Open Postman desktop application or Chrome web app extension that has installed before
-8. Choose HTTP Method and enter request url.(ex. localhost:8080/engineers)
-9. You can see all the end point in [here](#postman-collection)
-
-## Create Environment Variable
-
-```
-$ cp example.env .env
-$ nano .env
-```
-
-```
-#server Run
-PORT_RUNNING    = "YOUR SERVER PORT"
-
-#Database CONFIG
-DB_HOST         = "DATABASE HOST"
-DB_PORT         = "DATABASE PORT"
-DB_USER         = "DATABASE USER"
-DB_PASSWORD     = "DATABASE PASSWORD"
-DB_DATABASE     = "DATABASE NAME"
-
-#Redis CONFIG
-REDIS_ADDRESS     = "REDIS ADDRESS:REDIS PORT"
-REDIS_PASSWORD    = "REDIS PASSWORD"
-
-#Path Image Engineers
-PATH_STATIC_ENG     = "./public/images/engineers"
-PATH_UPLOAD_ENG     = "public/images/engineers/"
-PUBLIC_SHARE_IMG    = "/public/engineers"
-PUBLIC_UPLOAD_DB    = "public/engineers/"
-```
+1. Install Docker Engine
+2. Clone form git hub  `git clone https://github.com/iipshoifuddin/gohiringchannelsorchestrator.git`
+3. go to directory ../gohiringchannelsorchestrator
+4. Type `docker pull mysql`
+5. Type `docker pull redis`
+6. Type `docker-compose build`
+7. Type `docker-compose up`
+11. Open Postman desktop application or Chrome web app extension that has installed before
+12. Choose HTTP Method and enter request url.(ex. localhost:8080/engineers)
+13. You can see all the end point in [here](#postman-collection)
 
 ## Postman Collection
 
