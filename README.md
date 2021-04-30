@@ -1,6 +1,6 @@
 <h1 align="center">Simple RESTful API Hiring Channel App</h1>
 <p align="center">
-   <img height="200" src="https://www.docker.com/sites/default/files/d8/2019-07/Moby-logo.png"/>
+   <img height="180" src="https://www.docker.com/sites/default/files/d8/2019-07/Moby-logo.png"/>
   <img height="200" src="https://blog.golang.org/go-brand/Go-Logo/PNG/Go-Logo_Aqua.png"/>
   <img height ="200" src="https://download.logo.wine/logo/Redis/Redis-Logo.wine.png"/>
 </p>
