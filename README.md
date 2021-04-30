@@ -41,7 +41,7 @@ Gorm is a web application framework for Golang.
 6. Type `docker-compose build`
 7. Type `docker-compose up`
 11. Open Postman desktop application or Chrome web app extension that has installed before
-12. Choose HTTP Method and enter request url.(ex. localhost:8080/engineers)
+12. Choose HTTP Method and enter request url.(ex. localhost:8085/engineers)
 13. You can see all the end point in [here](#postman-collection)
 
 ## Postman Collection
